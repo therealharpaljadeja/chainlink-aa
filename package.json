@@ -1,0 +1,12 @@
+{
+    "name": "chainlink-hackathon",
+    "version": "1.0.0",
+    "author": "Harpal Jadeja <jadejaharpal14@gmail.com>",
+    "license": "MIT",
+    "workspaces": {
+        "packages": [
+            "packages/*"
+        ]
+    },
+    "private": "true"
+}

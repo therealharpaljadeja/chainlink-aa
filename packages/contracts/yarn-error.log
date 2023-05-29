@@ -1,0 +1,38 @@
+Arguments: 
+  /Users/harpalsinhjadeja/.nvm/versions/node/v16.19.1/bin/node /usr/local/bin/yarn add @account-abstraction/contracts
+
+PATH: 
+  /Users/harpalsinhjadeja/.nvm/versions/node/v16.19.1/bin:/Users/harpalsinhjadeja/.rbenv/shims:/Users/harpalsinhjadeja/.rbenv/bin:/Users/harpalsinhjadeja/.npm-global/bin:/opt/homebrew/bin:/Library/Frameworks/Python.framework/Versions/3.10/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/harpalsinhjadeja/Library/Android/sdk/emulator:/Users/harpalsinhjadeja/Library/Android/sdk/platform-tools:/Users/harpalsinhjadeja/.fig/bin:/Users/harpalsinhjadeja/.local/bin:/Users/harpalsinhjadeja/.foundry/bin:/Users/harpalsinhjadeja/.foundry/bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  16.19.1
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  TypeError: Cannot read properties of undefined (reading 'manifest')
+      at _loop (/usr/local/lib/node_modules/yarn/lib/cli.js:6977:102)
+      at _loop.next (<anonymous>)
+      at Add.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:7035:27)
+      at Generator.next (<anonymous>)
+      at step (/usr/local/lib/node_modules/yarn/lib/cli.js:310:30)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "hardhat-project",
+    "devDependencies": {
+      "@nomicfoundation/hardhat-toolbox": "^2.0.2",
+      "hardhat": "^2.14.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
