@@ -1,16 +1,18 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "@account-abstraction/contracts/samples/SimpleWallet.sol";
+import "@account-abstraction/contracts/samples/SimpleAccount.sol";
 import "@openzeppelin/contracts/interfaces/IERC1271.sol";
 import "@openzeppelin/contracts/utils/cryptography/ECDSA.sol";
 import "@openzeppelin/contracts/utils/introspection/ERC165.sol";
 
-contract Wallet is ERC165, IERC1271, SimpleWallet {
+contract Wallet is ERC165, IERC1271, SimpleAccount {
     constructor(
         IEntryPoint anEntryPoint,
         address anOwner
-    ) SimpleWallet(anEntryPoint, anOwner) {}
+    ) SimpleAccount(anEntryPoint) {
+        initialize(anOwner);
+    }
 
     function isValidSignature(
         bytes32 _hash,
@@ -26,7 +28,13 @@ contract Wallet is ERC165, IERC1271, SimpleWallet {
 
     function supportsInterface(
         bytes4 interfaceId
-    ) public view virtual override returns (bool) {
+    )
+        public
+        view
+        virtual
+        override(ERC165, TokenCallbackHandler)
+        returns (bool)
+    {
         return
             interfaceId == type(IERC1271).interfaceId ||
             super.supportsInterface(interfaceId);
